@@ -8,7 +8,7 @@ def pin_to_ipfs(data):
 	#api_secret = "a6c1890d357fcec346491c20f439bcd292ee896155ea41151ba0610936a38c62"
 	
 	# Convert the dictionary to JSON
-	json_data = json.dumps(data, indent=4)
+	#json_data = json.dumps(data, indent=4)
 
 	# Define the headers and URL for Pinata API
 	headers = {
