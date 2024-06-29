@@ -18,7 +18,7 @@ def pin_to_ipfs(data):
 	url = "https://api.pinata.cloud/pinning/pinJSONToIPFS"
     
 	# Send the request to Pinata
-	response = requests.request("POST", url, json=json_data, headers=headers)
+	response = requests.request("POST", url, json=data, headers=headers)
     
 	# Check if the request was successful
 	if response.status_code == 200:
