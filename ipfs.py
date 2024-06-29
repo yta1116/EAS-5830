@@ -31,18 +31,18 @@ def get_from_ipfs(cid,content_type="json"):
 	assert isinstance(cid,str), f"get_from_ipfs accepts a cid in the form of a string"
 	#YOUR CODE HERE	
 	# Define the IPFS gateway URL
-  ipfs_gateway_url = f"https://gateway.pinata.cloud/ipfs/{cid}"
+	ipfs_gateway_url = f"https://gateway.pinata.cloud/ipfs/{cid}"
     
-  # Send a GET request to fetch the content
-  response = requests.get(ipfs_gateway_url)
+	# Send a GET request to fetch the content
+	response = requests.get(ipfs_gateway_url)
     
-  # Check if the request was successful
-  if response.status_code == 200:
-    # Parse the content as JSON and return it as a dictionary
+	# Check if the request was successful
+	if response.status_code == 200:
+		# Parse the content as JSON and return it as a dictionary
 		assert isinstance(response.json(),dict), f"get_from_ipfs should return a dict"
-    return response.json()
-  else:
-    # Raise an error if the request was not successful
-    response.raise_for_status()
+		return response.json()
+	else:
+		# Raise an error if the request was not successful
+		response.raise_for_status()
 
 	#return data
