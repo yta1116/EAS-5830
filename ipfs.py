@@ -4,8 +4,6 @@ import json
 def pin_to_ipfs(data):
 	assert isinstance(data,dict), f"Error pin_to_ipfs expects a dictionary"
 	#YOUR CODE HERE
-	#api_key = "73feb8f6272c73bf972a"
-	#api_secret = "a6c1890d357fcec346491c20f439bcd292ee896155ea41151ba0610936a38c62"
 	
 	# Convert the dictionary to JSON
 	#json_data = json.dumps(data, indent=4)
