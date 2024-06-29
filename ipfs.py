@@ -6,7 +6,7 @@ def pin_to_ipfs(data):
 	#YOUR CODE HERE
 	# Convert the dictionary to JSON
   json_data = json.dumps(data)
-    
+
   # Define the headers and URL for Pinata API
   headers = {
     "Authorization": "Bearer 4d893dd87a50c3236bf0",
