@@ -8,12 +8,7 @@ def pin_to_ipfs(data):
 	#api_secret = "a6c1890d357fcec346491c20f439bcd292ee896155ea41151ba0610936a38c62"
 	
 	# Convert the dictionary to JSON
-	#json_data = json.dumps(data)
-	payload = {
-		"pinataOptions": {"cidVersion": 1},
-		"pinataMetadata": {"name": "pinnie.json"},
-		"pinataContent": {"somekey": "somevalue"}
-	}
+	json_data = json.dumps(data)
 
 	# Define the headers and URL for Pinata API
 	headers = {
@@ -23,7 +18,7 @@ def pin_to_ipfs(data):
 	url = "https://api.pinata.cloud/pinning/pinJSONToIPFS"
     
 	# Send the request to Pinata
-	response = requests.request("POST", url, json=payload, headers=headers)
+	response = requests.request("POST", url, json=json_data, headers=headers)
     
 	# Check if the request was successful
 	if response.status_code == 200:
