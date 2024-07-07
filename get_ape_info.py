@@ -39,7 +39,7 @@ def get_ape_info(apeID):
 	ipfs_gateway_url = f"https://gateway.pinata.cloud/ipfs/{substring}"
 	print(ipfs_gateway_url)
 
-	response = requests.get(ipfs_gateway_url)
+	# response = requests.get(ipfs_gateway_url)
 	# if response.status_code == 200:
 	# 	metadata = response.json()
 	# 	data['image'] = metadata.get('image', '')
