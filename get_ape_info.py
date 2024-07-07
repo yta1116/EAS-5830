@@ -33,21 +33,21 @@ def get_ape_info(apeID):
 	# owner = contract.functions.ownerOf(apeID).call()
 	# data['owner'] = owner
 
-	# token_uri = contract.functions.tokenURI(apeID).call()
-	# substring = token_uri.split("//")[1]
+	token_uri = contract.functions.tokenURI(apeID).call()
+	substring = token_uri.split("//")[1]
 
-	# ipfs_gateway_url = f"https://gateway.pinata.cloud/ipfs/{substring}"
+	ipfs_gateway_url = f"https://gateway.pinata.cloud/ipfs/{substring}"
 
-	# response = requests.get(ipfs_gateway_url)
-	# if response.status_code == 200:
-	# 	metadata = response.json()
-	# 	data['image'] = metadata.get('image', '')
+	response = requests.get(ipfs_gateway_url)
+	if response.status_code == 200:
+	 	metadata = response.json()
+	 	data['image'] = metadata.get('image', '')
 
-	# 	# Fetch traits to find 'eyes'
-	# 	attributes = metadata.get('attributes', [])
-	# 	for attribute in attributes:
-	# 		if attribute.get('trait_type') == 'Eyes':
-	# 			data['eyes'] = attribute.get('value', '')
+	 	# Fetch traits to find 'eyes'
+	 	attributes = metadata.get('attributes', [])
+	 	for attribute in attributes:
+	 		if attribute.get('trait_type') == 'Eyes':
+	 			data['eyes'] = attribute.get('value', '')
 
 	assert isinstance(data,dict), f'get_ape_info{apeID} should return a dict' 
 	assert all( [a in data.keys() for a in ['owner','image','eyes']] ), f"return value should include the keys 'owner','image' and 'eyes'"
