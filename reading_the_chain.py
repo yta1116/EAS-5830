@@ -66,7 +66,7 @@ def is_ordered_block(w3, block_num):
 	def get_priority_fee(tx):
 		if 'maxPriorityFeePerGas' in tx and 'maxFeePerGas' in tx:  # Type 2 transaction
 			max_priority_fee = tx['maxPriorityFeePerGas']
-			effective_max_fee = tx['maxFeePerGas'] - base_fee_per_gas
+			effective_max_fee = tx['maxFeePerGas'] - (base_fee_per_gas if base_fee_per_gas else 0)
 			return min(max_priority_fee, effective_max_fee)
 		else:  # Type 0 transaction
 			return tx['gasPrice'] - (base_fee_per_gas if base_fee_per_gas else 0)
