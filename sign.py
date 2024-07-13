@@ -13,7 +13,7 @@ def sign(m):
 
     account = w3.eth.account.create()
     eth_address = account.address  # Ethereum account address
-    private_key = account.privateKey  # Private key
+    private_key = account.key  # Private key
 
     # generate signature
     # your code here
