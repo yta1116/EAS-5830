@@ -17,7 +17,7 @@ def get_keys(challenge,keyId = 0, filename = "eth_mnemonic.txt"):
 
     msg = eth_account.messages.encode_defunct(challenge)
 
-	#YOUR CODE HERE
+    #YOUR CODE HERE
     eth_addr = '0xE1291a15914B145b1b8e4d14262de323FeF41Cc8'  # Ethereum account address
     private_key = '418065defaaa52b069f5e37c3e20ec43670b0dd568e5beb472fbc8053260b270' # Private key
 
