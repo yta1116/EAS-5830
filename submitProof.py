@@ -160,6 +160,8 @@ def send_signed_msg(proof, random_leaf):
     #     'gas': 2000000,
     #     'gasPrice': w3.toWei('50', 'gwei')
     # })
+    print(proof)
+    print(random_leaf)
     tx = contract.functions.submit(proof, random_leaf)
 
     signed_tx = w3.eth.account.sign_transaction(tx, private_key=acct.key)
