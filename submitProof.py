@@ -165,7 +165,7 @@ def send_signed_msg(proof, random_leaf):
     # Build and sign the transaction
     tx = contract.functions.submit(proof, random_leaf).build_transaction({
         'from': acct.address,
-        'nonce': 13,
+        'nonce': 0,
         'gas': gas_estimate + 100000,  # Adding extra gas to the estimate
         'gasPrice': w3.to_wei('20', 'gwei')  # Increase the gas price
     })
