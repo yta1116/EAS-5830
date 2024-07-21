@@ -153,20 +153,11 @@ def send_signed_msg(proof, random_leaf):
     # TODO YOUR CODE HERE
     contract = w3.eth.contract(address=address, abi=abi)
 
-    # Estimate gas limit
-    try:
-        gas_estimate = contract.functions.submit(proof, random_leaf).estimateGas({
-            'from': acct.address
-        })
-    except Exception as e:
-        print(f"Gas estimation failed: {e}")
-        return None
-
     # Build and sign the transaction
     tx = contract.functions.submit(proof, random_leaf).build_transaction({
         'from': acct.address,
         'nonce': 0,
-        'gas': gas_estimate + 100000,  # Adding extra gas to the estimate
+        'gas': 10000000,  # Adding extra gas to the estimate
         'gasPrice': w3.to_wei('20', 'gwei')  # Increase the gas price
     })
     # tx = contract.functions.submit(proof, random_leaf)
