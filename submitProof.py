@@ -158,7 +158,7 @@ def send_signed_msg(proof, random_leaf):
         'from': acct.address,
         'nonce': 13,
         'gas': 2000000,
-        'gasPrice': w3.to_wei('5', 'gwei')
+        'gasPrice': w3.to_wei('10', 'gwei')
     })
     # tx = contract.functions.submit(proof, random_leaf)
     # print(tx)
