@@ -67,7 +67,7 @@ def convert_leaves(primes_list):
     # TODO YOUR CODE HERE
     leaves = []
     for prime in primes_list:
-        leaves.append(Web3.solidity_keccak(['bytes32'], [prime]))
+        leaves.append(Web3.solidity_keccak(['uint256'], [prime]))
     return leaves
 
 
