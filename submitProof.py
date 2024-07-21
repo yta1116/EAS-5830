@@ -134,7 +134,6 @@ def sign_challenge(challenge):
     message = encode_defunct(text=challenge)
 
     eth_sig_obj = acct.sign_message(message)
-    print("done2")
 
     return addr, eth_sig_obj.signature.hex()
 
