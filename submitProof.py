@@ -245,4 +245,4 @@ def hash_pair(a, b):
 
 
 if __name__ == "__main__":
-    merkle_assignment()
+    #merkle_assignment()
